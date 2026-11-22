@@ -1,0 +1,12 @@
+D:\Desarrollo\prooftask-solana\programs\prooftask\target\debug\deps\ark_std-f0c64adc87a37ee2.d: C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\lib.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\io\mod.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\io\error.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\error.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\rand_helper.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\perf_trace.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\iterable\mod.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\iterable\rev.rs
+
+D:\Desarrollo\prooftask-solana\programs\prooftask\target\debug\deps\libark_std-f0c64adc87a37ee2.rmeta: C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\lib.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\io\mod.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\io\error.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\error.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\rand_helper.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\perf_trace.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\iterable\mod.rs C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\iterable\rev.rs
+
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\lib.rs:
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\io\mod.rs:
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\io\error.rs:
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\error.rs:
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\rand_helper.rs:
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\perf_trace.rs:
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\iterable\mod.rs:
+C:\Users\maman\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ark-std-0.4.0\src\iterable\rev.rs:

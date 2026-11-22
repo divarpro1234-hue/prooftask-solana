@@ -1,0 +1,15 @@
+PARCHE DE INTEGRACION PROOFTASK (2 archivos TS + IDL provisional)
+
+Preparado a partir del ZIP que compartiste. Conserva tus cambios de Solana Playground.
+
+1. Haz copia de seguridad de la carpeta D:\Desarrollo\prooftask-solana.
+2. Copia los tres archivos de este ZIP a las mismas rutas del proyecto.
+3. IMPORTANTE: este IDL tiene la direccion provisional PTask111... y NO sustituye al IDL generado por Playground. Cuando consigas el IDL real, reemplaza src/idl/prooftask.json con el generado tras Build.
+4. Crea .env.local en la raiz del proyecto con VITE_PROGRAM_ID=PROGRAM_ID_REAL (sin comillas).
+5. Compara o actualiza Anchor.toml para reflejar la direccion real Devnet; no despliegues en Windows.
+6. Ejecuta npm run build y npm run dev.
+7. En la app selecciona modo Solana (no mock) si existe esa opcion. Conecta Phantom/Solflare configurada en Devnet.
+
+Correcciones: 6 discriminadores de instrucciones, discriminador de Task, cuenta PDA devuelta al crear una tarea y error parser sin coincidencia de cadena vacia. IDL provisional corregido parcialmente.
+No verifica el despliegue, no aporta tests ejecutados ni garantiza que RPC admita getProgramAccounts.
+NO copies claves privadas ni frase semilla a esta carpeta.

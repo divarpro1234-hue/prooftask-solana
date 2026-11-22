@@ -1,0 +1,568 @@
+{
+  "address": "PTask11111111111111111111111111111111111111",
+  "metadata": {
+    "name": "prooftask",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "ProofTask - Gestor de proyectos y tareas verificables en Solana"
+  },
+  "instructions": [
+    {
+      "name": "create_project",
+      "discriminator": [
+        148,
+        219,
+        181,
+        42,
+        221,
+        114,
+        145,
+        190
+      ],
+      "docs": [
+        "Crea una nueva cuenta PDA de proyecto vinculada a la autoridad firmante"
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "project",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  112,
+                  114,
+                  111,
+                  106,
+                  101,
+                  99,
+                  116
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "authority"
+              },
+              {
+                "kind": "arg",
+                "path": "project_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "project_id",
+          "type": "u64"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "create_task",
+      "discriminator": [
+        194,
+        80,
+        6,
+        180,
+        232,
+        127,
+        48,
+        171
+      ],
+      "docs": [
+        "Crea una nueva tarea PDA derivada deterministamente del contador del proyecto"
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "project",
+          "writable": true
+        },
+        {
+          "name": "task",
+          "writable": true,
+          "pda": {
+            "seeds": [
+              {
+                "kind": "const",
+                "value": [
+                  116,
+                  97,
+                  115,
+                  107
+                ]
+              },
+              {
+                "kind": "account",
+                "path": "project"
+              },
+              {
+                "kind": "account",
+                "path": "project.next_task_id"
+              }
+            ]
+          }
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "start_task",
+      "discriminator": [
+        188,
+        33,
+        243,
+        39,
+        149,
+        232,
+        14,
+        168
+      ],
+      "docs": [
+        "Inicia la ejecucion de una tarea (Pending -> InProgress)"
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "task",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "complete_task",
+      "discriminator": [
+        109,
+        167,
+        192,
+        41,
+        129,
+        108,
+        220,
+        196
+      ],
+      "docs": [
+        "Completa una tarea registrando una URL de evidencia HTTPS verificable (InProgress -> Completed)"
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "signer": true
+        },
+        {
+          "name": "project"
+        },
+        {
+          "name": "task",
+          "writable": true
+        }
+      ],
+      "args": [
+        {
+          "name": "evidence_url",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "close_task",
+      "discriminator": [
+        55,
+        234,
+        77,
+        69,
+        245,
+        208,
+        54,
+        167
+      ],
+      "docs": [
+        "Cierra una tarea completada, decrece el contador y devuelve la renta a la autoridad"
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "project",
+          "writable": true
+        },
+        {
+          "name": "task",
+          "writable": true
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "close_project",
+      "discriminator": [
+        117,
+        209,
+        53,
+        106,
+        93,
+        55,
+        112,
+        49
+      ],
+      "docs": [
+        "Cierra un proyecto vacio (active_tasks == 0) y devuelve la renta a la autoridad"
+      ],
+      "accounts": [
+        {
+          "name": "authority",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "project",
+          "writable": true
+        }
+      ],
+      "args": []
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Project",
+      "discriminator": [
+        205,
+        168,
+        189,
+        202,
+        181,
+        247,
+        142,
+        19
+      ]
+    },
+    {
+      "name": "Task",
+      "discriminator": [
+        79,
+        34,
+        229,
+        55,
+        88,
+        90,
+        55,
+        84
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "ProjectCreated",
+      "discriminator": [
+        192,
+        10,
+        163,
+        29,
+        185,
+        31,
+        67,
+        168
+      ]
+    },
+    {
+      "name": "TaskCreated",
+      "discriminator": [
+        49,
+        174,
+        6,
+        7,
+        71,
+        159,
+        69,
+        175
+      ]
+    },
+    {
+      "name": "TaskStarted",
+      "discriminator": [
+        42,
+        156,
+        19,
+        166,
+        239,
+        172,
+        83,
+        44
+      ]
+    },
+    {
+      "name": "TaskCompleted",
+      "discriminator": [
+        132,
+        223,
+        98,
+        152,
+        2,
+        9,
+        57,
+        128
+      ]
+    },
+    {
+      "name": "TaskClosed",
+      "discriminator": [
+        158,
+        183,
+        233,
+        176,
+        74,
+        66,
+        243,
+        77
+      ]
+    },
+    {
+      "name": "ProjectClosed",
+      "discriminator": [
+        99,
+        119,
+        201,
+        52,
+        106,
+        26,
+        76,
+        87
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "UnauthorizedAuthority",
+      "msg": "No autorizado para realizar esta operacion."
+    },
+    {
+      "code": 6001,
+      "name": "ProjectMismatch",
+      "msg": "La tarea no pertenece al proyecto especificado."
+    },
+    {
+      "code": 6002,
+      "name": "NameEmpty",
+      "msg": "El nombre del proyecto no puede estar vacio."
+    },
+    {
+      "code": 6003,
+      "name": "NameTooLong",
+      "msg": "El nombre supera el limite maximo de 64 bytes UTF-8."
+    },
+    {
+      "code": 6004,
+      "name": "DescriptionEmpty",
+      "msg": "La descripcion del proyecto no puede estar vacia."
+    },
+    {
+      "code": 6005,
+      "name": "DescriptionTooLong",
+      "msg": "La descripcion supera el limite maximo en bytes UTF-8."
+    },
+    {
+      "code": 6006,
+      "name": "TitleEmpty",
+      "msg": "El titulo de la tarea no puede estar vacio."
+    },
+    {
+      "code": 6007,
+      "name": "TitleTooLong",
+      "msg": "El titulo supera el limite maximo de 64 bytes UTF-8."
+    },
+    {
+      "code": 6008,
+      "name": "InvalidTaskStatusTransition",
+      "msg": "Transicion de estado invalida para la tarea."
+    },
+    {
+      "code": 6009,
+      "name": "EvidenceUrlEmpty",
+      "msg": "La URL de evidencia HTTPS no puede estar vacia."
+    },
+    {
+      "code": 6010,
+      "name": "EvidenceUrlTooLong",
+      "msg": "La URL de evidencia supera el limite maximo de 160 bytes UTF-8."
+    },
+    {
+      "code": 6011,
+      "name": "InvalidEvidenceProtocol",
+      "msg": "La URL de evidencia debe comenzar obligatoriamente con https://"
+    },
+    {
+      "code": 6012,
+      "name": "TaskNotCompleted",
+      "msg": "Solo se pueden cerrar tareas que esten en estado Completed."
+    },
+    {
+      "code": 6013,
+      "name": "ProjectHasActiveTasks",
+      "msg": "No se puede cerrar un proyecto que aun contenga tareas activas."
+    },
+    {
+      "code": 6014,
+      "name": "ArithmeticOverflow",
+      "msg": "Desbordamiento aritmetico en la operacion."
+    },
+    {
+      "code": 6015,
+      "name": "ArithmeticUnderflow",
+      "msg": "Subdesbordamiento aritmetico en la operacion."
+    }
+  ],
+  "types": [
+    {
+      "name": "Project",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "pubkey"
+          },
+          {
+            "name": "project_id",
+            "type": "u64"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "next_task_id",
+            "type": "u64"
+          },
+          {
+            "name": "active_tasks",
+            "type": "u32"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Task",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "project",
+            "type": "pubkey"
+          },
+          {
+            "name": "task_id",
+            "type": "u64"
+          },
+          {
+            "name": "title",
+            "type": "string"
+          },
+          {
+            "name": "description",
+            "type": "string"
+          },
+          {
+            "name": "status",
+            "type": {
+              "defined": {
+                "name": "TaskStatus"
+              }
+            }
+          },
+          {
+            "name": "evidence_url",
+            "type": "string"
+          },
+          {
+            "name": "created_at",
+            "type": "i64"
+          },
+          {
+            "name": "updated_at",
+            "type": "i64"
+          },
+          {
+            "name": "bump",
+            "type": "u8"
+          }
+        ]
+      }
+    },
+    {
+      "name": "TaskStatus",
+      "type": {
+        "kind": "enum",
+        "variants": [
+          {
+            "name": "Pending"
+          },
+          {
+            "name": "InProgress"
+          },
+          {
+            "name": "Completed"
+          }
+        ]
+      }
+    }
+  ]
+}

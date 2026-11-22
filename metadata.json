@@ -1,0 +1,6 @@
+{
+  "name": "ProofTask",
+  "description": "Gestor de proyectos y tareas verificables en Solana. Manage. Prove. Verify.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
