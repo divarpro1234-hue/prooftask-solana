@@ -16,18 +16,50 @@ las condiciones del programa.
 - Demo: https://darling-tapioca-cbf53e.netlify.app/
 - Repositorio: https://github.com/divarpro1234-hue/prooftask-solana
 - Red: Solana Devnet
-- Program ID: 71xiWbM7kzt7NGdYchhTl7SA8LKVCCnaSZ8Et3avcy9o
-- Explorador: https://explorer.solana.com/address/71xiWbM7kzt7NGdYchhTl7SA8LKVCCnaSZ8Et3avcy9o?cluster=devnet
+- Program ID: 71xiWbM7kzt7NGdYchhT17SA8LKVCcnaSZ8Et3avcy9o
+- Explorador: https://explorer.solana.com/address/71xiWbM7kzt7NGdYchhT17SA8LKVCcnaSZ8Et3avcy9o?cluster=devnet
 
 ### Aporte propio
 
 Validación de evidencia HTTPS y cierre condicionado de
 cuentas, con controles de autoridad y pertenencia en Anchor.
 
-### Evidencias
 
-Agregar aquí las firmas verificadas de las operaciones y
-los resultados reales de las pruebas ejecutadas.
+### Evidencias verificables en Solana Devnet
+
+Las siguientes transacciones fueron realizadas desde el frontend
+de ProofTask utilizando Phantom Wallet y verificadas mediante
+consultas RPC y registros de ejecución de Solana Devnet.
+
+**Program ID:**
+`71xiWbM7kzt7NGdYchhT17SA8LKVCcnaSZ8Et3avcy9o`
+
+#### Prueba 1 — Creación de proyecto
+
+- **Instrucción:** `CreateProject`
+- **Estado:** SUCCESS
+- **Red:** Solana Devnet
+- **Resultado:** Creación exitosa de la cuenta PDA del proyecto.
+
+[Ver transacción en Solana Explorer](https://explorer.solana.com/tx/42FXSiSZonuEJ5LpXRrmiUhVeHGhrYNFtGgmKY22aDaFvYjxVhetjxCFbiDGj8snZk8A32czo2cGpKpntYJ5jAAE?cluster=devnet)
+
+#### Prueba 2 — Creación de tarea
+
+- **Instrucción:** `CreateTask`
+- **Estado:** SUCCESS
+- **Red:** Solana Devnet
+- **Resultado:** Creación exitosa de una cuenta PDA de tarea asociada al proyecto.
+
+[Ver transacción en Solana Explorer](https://explorer.solana.com/tx/56ZF79GGVDiVrQHE1WD7LJbbAhDPQuXH9yVRHm9r3H2Unvyv1MFNbnkZg77xXSjsPXZCusKvhwJPxgCibmGJs7kx?cluster=devnet)
+
+#### Enlaces del proyecto
+
+- **Aplicación:** https://darling-tapioca-cbf53e.netlify.app/
+- **Repositorio:** https://github.com/divarpro1234-hue/prooftask-solana
+
+**Nota:** Las evidencias anteriores confirman las operaciones
+CreateProject y CreateTask. Las demás pruebas de integración
+y seguridad requieren sus resultados de ejecución correspondientes.
 
 ProofTask es una plataforma descentralizada desarrollada para el **Advanced Bootcamp de WayLearn LATAM**, diseñada para la creación, seguimiento y verificación de hitos técnicos con pruebas inmutables HTTPS registradas sobre la blockchain de **Solana (Devnet)** utilizando **Anchor** y **React + TypeScript**.
 
