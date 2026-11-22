@@ -1,5 +1,34 @@
 # ProofTask — Gestor de Proyectos y Tareas Verificables en Solana
 
+## Proyecto final — Advanced Bootcamp
+
+**Ruta:** Proyecto propio
+
+**Aplicación:** ProofTask
+
+ProofTask permite crear proyectos y gestionar tareas mediante
+cuentas PDA en Solana. Las tareas pueden iniciarse, completarse
+con una referencia de evidencia HTTPS y cerrarse cuando cumplen
+las condiciones del programa.
+
+### Enlaces de la entrega
+
+- Demo: https://darling-tapioca-cbf53e.netlify.app/
+- Repositorio: https://github.com/divarpro1234-hue/prooftask-solana
+- Red: Solana Devnet
+- Program ID: 71xiWbM7kzt7NGdYchhTl7SA8LKVCCnaSZ8Et3avcy9o
+- Explorador: https://explorer.solana.com/address/71xiWbM7kzt7NGdYchhTl7SA8LKVCCnaSZ8Et3avcy9o?cluster=devnet
+
+### Aporte propio
+
+Validación de evidencia HTTPS y cierre condicionado de
+cuentas, con controles de autoridad y pertenencia en Anchor.
+
+### Evidencias
+
+Agregar aquí las firmas verificadas de las operaciones y
+los resultados reales de las pruebas ejecutadas.
+
 ProofTask es una plataforma descentralizada desarrollada para el **Advanced Bootcamp de WayLearn LATAM**, diseñada para la creación, seguimiento y verificación de hitos técnicos con pruebas inmutables HTTPS registradas sobre la blockchain de **Solana (Devnet)** utilizando **Anchor** y **React + TypeScript**.
 
 ---
